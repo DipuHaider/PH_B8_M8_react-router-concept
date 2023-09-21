@@ -15,7 +15,7 @@ const NavBar = () => {
 
     return (
         <nav>
-            <div  className="md:hidden" onClick={()=> setOpen(!open)}>
+            <div className="md:hidden" onClick={()=> setOpen(!open)}>
                 {
                     open === true ? 
                     <TfiClose className="text-4xl md:hidden"></TfiClose> 
@@ -25,7 +25,7 @@ const NavBar = () => {
             </div>
             
             
-            <ul className="md:flex">
+            <ul className={`md:flex duration-1000 absolute ${open ? 'top-16' : '-top-60'} bg-`}>
                 {
                     routes.map( route => <Link key={route.id} route={route}></Link> )
                 }
